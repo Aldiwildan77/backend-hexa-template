@@ -26,8 +26,6 @@ func main() {
 		panic(err)
 	}
 
-	fmt.Printf("%+v", cfg)
-
 	db, err := NewDatabaseInstance(cfg)
 	if err != nil {
 		panic(err)

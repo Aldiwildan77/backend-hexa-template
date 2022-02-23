@@ -73,7 +73,6 @@ func (r *repository) Create(ctx context.Context, report *entity.Report) error {
 func (r *repository) Update(ctx context.Context, report *entity.Report) error {
 	q := fmt.Sprintf("%s = '%s'", reportIDColumn, report.ReportID)
 	reportModel := Report{}.FromReportEntityToDTO(report)
-	fmt.Printf("%+v", reportModel)
 	return r.db.WithContext(ctx).Where(q).Updates(reportModel).Error
 }
 
