@@ -9,6 +9,8 @@ Ref: https://netflixtechblog.com/ready-for-changes-with-hexagonal-architecture-b
 - Custom Database (MongoDB, Postgres, etc)
 - Custom Cache (Redis, Memcached, etc)
 - Middleware Implementations (CORS, Rate Limiter, etc)
+- Unit Testing 
+- Integration Testing
 - Etc
 
 Will be updated soon.

@@ -1,7 +1,6 @@
 package entity
 
 import (
-	"errors"
 	"time"
 
 	"github.com/Aldiwildan77/backend-hexa-template/pkg/pagination"
@@ -34,10 +33,3 @@ func (q *GetReportsByQuery) ValidateQuery() {
 		q.Order = query.OrderDesc
 	}
 }
-
-// errors
-var (
-	ErrReportIDRequired   = errors.New("report_id is required")
-	ErrReporterIDRequired = errors.New("reporter_id is required")
-	ErrReportedIDRequired = errors.New("reported_id is required")
-)
