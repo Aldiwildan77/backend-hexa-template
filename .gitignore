@@ -24,4 +24,7 @@ go.work
 tmp/
 
 # Environment Variable
-.env
+*.env
+
+# Log files
+logs/
