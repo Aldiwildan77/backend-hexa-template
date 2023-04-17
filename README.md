@@ -6,6 +6,9 @@ Ref: https://netflixtechblog.com/ready-for-changes-with-hexagonal-architecture-b
 
 ## Minus
 
+- Wire (Dependency Injection)
+- Go Kratos
+- Swagger Integration
 - CMD usage
 - GRPC
 - Worker
