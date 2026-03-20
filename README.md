@@ -2,7 +2,7 @@
 
 My backend template for Hexagonal Architecture not perfect at all, but it's good enough for starting.
 
-Ref: https://netflixtechblog.com/ready-for-changes-with-hexagonal-architecture-b315ec967749
+Ref: <https://netflixtechblog.com/ready-for-changes-with-hexagonal-architecture-b315ec967749>
 
 ## Minus
 
@@ -10,9 +10,7 @@ Ref: https://netflixtechblog.com/ready-for-changes-with-hexagonal-architecture-b
 - Wire (Dependency Injection)
 - Go Kratos
 - Swagger Integration
-- CMD usage
 - GRPC
-- Worker
 - Prometheus metrics
 - Jaeger tracing
 - Integration Testing

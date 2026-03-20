@@ -6,6 +6,11 @@ type Middleware struct {
 	RateLimit RateLimit
 	Timeout   Timeout
 	CORS      CORS
+	Metrics   MetricsConfig
+}
+
+type MetricsConfig struct {
+	Enabled bool `env:"METRICS_ENABLED" envDefault:"true"`
 }
 
 type RateLimit struct {

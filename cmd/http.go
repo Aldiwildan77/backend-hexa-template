@@ -55,6 +55,8 @@ func StartHTTPServer(cmd *cobra.Command, args []string) error {
 
 	stats := middleware_infrastructure.NewStatistic()
 
+	metricsMiddleware := middleware_infrastructure.NewMetrics()
+
 	rd := persistence_infrastructure.NewRedis(redis.Options{
 		Addr:         cfg.Cache.GetAddress(),
 		ClientName:   cfg.Application.Name,
@@ -91,7 +93,15 @@ func StartHTTPServer(cmd *cobra.Command, args []string) error {
 	e.Use(stats.Process)
 	e.Use(middleware_infrastructure.ServerHeader)
 
+	if cfg.Middleware.Metrics.Enabled {
+		e.Use(metricsMiddleware.Process)
+	}
+
 	e.GET("/stats", stats.Handle)
+
+	if cfg.Middleware.Metrics.Enabled {
+		e.GET("/metrics", metricsMiddleware.Handle)
+	}
 
 	// REMOVE THIS
 	reportRepo := report_repository.New(db)
