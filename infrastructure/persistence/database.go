@@ -5,6 +5,8 @@ import (
 	"time"
 
 	"github.com/rs/zerolog/log"
+	"gorm.io/driver/mysql"
+	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
 	"gorm.io/gorm/logger"
 )
@@ -37,4 +39,15 @@ func NewDatabase(dialector gorm.Dialector, isDebug bool) (*gorm.DB, error) {
 	}
 
 	return instance, nil
+}
+
+func NewDialector(dsn string, dialect string) (gorm.Dialector, error) {
+	switch dialect {
+	case "mysql":
+		return mysql.Open(dsn), nil
+	case "postgres":
+		return postgres.Open(dsn), nil
+	default:
+		return nil, fmt.Errorf("unsupported database dialect, %s", dialect)
+	}
 }
